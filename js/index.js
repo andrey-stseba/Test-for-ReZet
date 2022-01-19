@@ -11,9 +11,11 @@ console.group(
 function sortArray (arr) {
   const result = [];
   for (let i = 1; i < arr.length - 1; i++) {
-    const condition =
-      (arr[i - 1] > arr[i] && arr[i] < arr[i + 1]) ||
-      (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]);
+    const a = arr[i - 1],
+      b = arr[i],
+      c = arr[i + 1];
+
+    const condition = (a > b && b < c) || (a < b && b > c);
 
     condition ? result.push(1) : result.push(0);
   }
